@@ -24,3 +24,12 @@ body {
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
+
+#hire {
+    position:fixed;
+    bottom:0px;
+    left:50%;
+    margin-bottom: 1px;
+    color: #CACACA;
+    transform: translateX(-50%);
+}
