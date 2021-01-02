@@ -17,6 +17,14 @@
         var i = min;
         var cat = document.getElementById("cat");
 
+        // Prevent context menu (stop it from appearing on phones when user long-presses).
+        window.oncontextmenu = function(event) 
+        {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        };
+
         function random() 
         {
             return Math.floor(Math.random() * (max - min) + min);
