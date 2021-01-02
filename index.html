@@ -8,8 +8,8 @@
 
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
-<body>
-    <img id="cat" src="img/0close.png" onpointerdown="mouseDown()" onpointerup="mouseUp()" />
+<body onpointerdown="mouseDown()" onpointerup="mouseUp()">
+    <img id="cat" src="img/0close.png" />
 
     <script>
         var min = 1;
@@ -24,6 +24,19 @@
             event.stopPropagation();
             return false;
         };
+
+        document.addEventListener('keydown', keyDown);
+        document.addEventListener('keyup', keyUp);
+
+        function keyDown(e) 
+        {
+            mouseDown();
+        }
+
+        function keyUp(e)
+        {
+            mouseUp();
+        }
 
         function random() 
         {
