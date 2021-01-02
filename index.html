@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>popc.at</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="cat" src="img/0close.png" onmousedown="mouseDown()" onmouseup="mouseUp()" />
+
+    <script>
+        var min = 1;
+        var max = 7;
+        var i = min;
+        var cat = document.getElementById("cat");
+
+        function random() 
+        {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        function mouseDown()
+        {
+            cat.src = "img/0open.png";
+
+            new Audio('snd/pop' + random() + '.mp3').play();
+
+            i++;
+
+            if (i > max)
+            {
+                i = min;
+            }
+        }
+
+        function mouseUp()
+        {
+            cat.src = "img/0close.png";
+        }
+    </script>
+</body>
