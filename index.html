@@ -7,13 +7,18 @@
     <link rel="preload" href="img/0open.png">
 </head>
 <body>
-    <img id="cat" src="img/0close.png" onmousedown="mouseDown()" onmouseup="mouseUp()" />
+    <div id="cat" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        <img id="open" src="img/0close.png" />
+        <img id="close" src="img/0open.png"  />
+    </div>
 
     <script>
         var min = 1;
         var max = 7;
         var i = min;
         var cat = document.getElementById("cat");
+        var open = document.getElementById("open");
+        var close = document.getElementById("close");
 
         function random() 
         {
@@ -22,7 +27,8 @@
 
         function mouseDown()
         {
-            cat.src = "img/0open.png";
+            open.style.display = 'none';
+            close.style.display = 'inherit';
 
             new Audio('snd/pop' + random() + '.mp3').play();
 
@@ -36,7 +42,8 @@
 
         function mouseUp()
         {
-            cat.src = "img/0close.png";
+            open.style.display = 'inherit';
+            close.style.display = 'none';
         }
     </script>
 </body>
